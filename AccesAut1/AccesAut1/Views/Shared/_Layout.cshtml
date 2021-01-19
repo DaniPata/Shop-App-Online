@@ -1,0 +1,238 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] AccesAut1</title>
+
+    <!-- //for-mobile-apps -->
+    <!-- Custom Theme files -->
+    <link href="~/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/fasthover.css" rel="stylesheet" />
+    <link href="~/css/popuo-box.css" rel="stylesheet" />
+    <!-- //Custom Theme files -->
+    <!-- font-awesome icons -->
+    <link href="~/css/font-awesome.css" rel="stylesheet" />
+    <!-- //font-awesome icons -->
+    <!-- js -->
+    <script src="~/js/jquery.min.js"></script>
+    <link href="~/css/jquery.countdown.css" rel="stylesheet" />
+    <!-- //js -->
+    <!-- web fonts -->
+    <link href='https://fonts.googleapis.com/css?family=Glegoo:400,700' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!-- //web fonts -->
+    <!-- for bootstrap working -->
+ 
+    <script src="~/js/bootstrap-3.1.1.min.js"></script>
+    <!-- start-smooth-scrolling -->
+    <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+</head>
+<body>
+
+    @*<script>
+            $('#myModal88').modal('show');
+        </script>*@
+    <!-- header modal -->
+    <!-- header -->
+    <div class="header" id="home1">
+        <div class="container">
+
+            <div class="w3l_logo">
+                <h1><a href="index.html">Accesorii Auto<span>Magazinul tau. Locul tau.</span></a></h1>
+            </div>
+            <div class="cart cart box_1">
+                @await Component.InvokeAsync("CartTop")
+            </div>
+        </div>
+    <!-- //header -->
+    <!-- navigation -->
+    <div class="navigation">
+        <div class="container">
+            <nav class="navbar navbar-default">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header nav_2">
+                    <button type="button" class="navbar-toggle collapsed navbar-toggle1" data-toggle="collapse" data-target="#bs-megadropdown-tabs">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-megadropdown-tabs">
+                    <ul class="nav navbar-nav">
+                        @*<li><a href="index.html" class="act">Home</a></li>*@
+                        <li><a class="act" asp-area="" asp-controller="home" asp-action="index">home</a></li>
+                        <!-- Mega Menu -->
+                        <li class="dropdown">
+                            @*<a href="#" class="dropdown-toggle" data-toggle="dropdown">Products <b class="caret"></b></a>*@
+                        <li><a asp-area="" asp-controller="product" asp-action="product">Products</a></li>
+                        <li><a asp-area="" asp-controller="wishlist" asp-action="wishlist">Wishlist</a></li>
+                        <li><a asp-area="" asp-controller="orders" asp-action="Index">Orders</a></li>
+                        <ul class="dropdown-menu multi-column columns-3">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>Accesorii interioare</h6>
+                                        <li><a href="products.html">Covorase auto</a></li>
+                                        <li><a href="products.html">Suporturi auto<span>New</span></a></li>
+                                        <li><a href="products.html">Huse</a></li>
+                                        <li><a href="products.html">Cotiere auto<span>New</span></a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-3">
+                                    <ul class="multi-column-dropdown">
+                                        <h6>Accesorii exterioare</h6>
+                                        <li><a href="products1.html">Capace roti</a></li>
+                                        <li><a href="products1.html">Cutii portpagaj</a></li>
+                                        <li><a href="products1.html">Oglinzi auto <span>New</span></a></li>
+                                        <li><a href="products1.html"><i>Bare transversabile</i></a></li>
+                                    </ul>
+                                </div>
+
+                                <div class="col-sm-4">
+                                    <div class="w3ls_products_pos">
+                                        <h4>30%<i>Off/-</i></h4>
+                                        <img src="images/1.jpg" alt=" " class="img-responsive" />
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                        </ul>
+
+                        <li><a href="about.html">About Us</a></li>
+                      
+                   
+                    </ul>
+
+                </div>
+                <partial name="_LoginPartial" />
+
+            </nav>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="container">
+            <h3>Accesorii Auto, <span>Oferta speciala</span></h3>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <!-- //top-brands -->
+    <!-- newsletter -->
+    <div class="newsletter">
+        <div class="container">
+            <div class="col-md-6 w3agile_newsletter_left">
+                <h3>Newsletter</h3>
+                <p>Excepteur sint occaecat cupidatat non proident, sunt.</p>
+            </div>
+            <div class="col-md-6 w3agile_newsletter_right">
+                <form action="#" method="post">
+                    <input type="email" name="Email" placeholder="Email" required="">
+                    <input type="submit" value="" />
+                </form>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+
+    <!-- //newsletter -->
+    <!-- //newsletter -->
+    <!-- footer -->
+    <div class="footer">
+        <div class="container">
+            <div class="w3_footer_grids">
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Contact</h3>
+                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
+                    <ul class="address">
+                        <li><i class="glyphicon glyphicon-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
+                        <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
+                        <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>+1234 567 567</li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Information</h3>
+                    <ul class="info">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="mail.html">Contact Us</a></li>
+                        <li><a href="codes.html">Short Codes</a></li>
+                        <li><a href="faq.html">FAQ's</a></li>
+                        <li><a href="products.html">Special Products</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Category</h3>
+                    <ul class="info">
+                        <li><a href="products.html">Mobiles</a></li>
+                        <li><a href="products1.html">Laptops</a></li>
+                        <li><a href="products.html">Purifiers</a></li>
+                        <li><a href="products1.html">Wearables</a></li>
+                        <li><a href="products2.html">Kitchen</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 w3_footer_grid">
+                    <h3>Profile</h3>
+                    <ul class="info">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="products.html">Today's Deals</a></li>
+                    </ul>
+                    <h4>Follow Us</h4>
+                    <div class="agileits_social_button">
+                        <ul>
+                            <li><a href="#" class="facebook"> </a></li>
+                            <li><a href="#" class="twitter"> </a></li>
+                            <li><a href="#" class="google"> </a></li>
+                            <li><a href="#" class="pinterest"> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+        <div class="footer-copy">
+            <div class="footer-copy1">
+                <div class="footer-copy-pos">
+                    <a href="#home1" class="scroll"><img src="/images/arrow.png" alt=" " class="img-responsive" /></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- //footer -->
+    <!-- cart-js -->
+
+    <script src="~/js/minicart.js"></script>
+    <script>
+        w3ls.render();
+
+        w3ls.cart.on('w3sb_checkout', function (evt) {
+            var items, len, i;
+
+            if (this.subtotal() > 0) {
+                items = this.items();
+
+                for (i = 0, len = items.length; i < len; i++) {
+                }
+            }
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
